@@ -1,0 +1,236 @@
+<html>
+<head>
+
+  <meta charset='utf-8'>
+  <title>Unirvana Coder</title>
+  <meta name="author" content="Álan Dufour" />
+  <meta http-equiv="language" content="es" />
+	<meta name="description" content="Live Code Editor - Advanced online code editor">
+	<title>Unirvana Coder</title>  
+
+  <!-- Application Dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <!-- UI Dependencies -->
+	<link href="assets/colorPicker/css/jqColor.css" media="all" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+
+  <!-- Visual Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <!-- New Visual Dependencies for GridStacks-->
+  <link rel="stylesheet" href="assets\GridStack\grid.css">
+  <script src="assets\GridStack\gridstack-h5.js"></script>  
+
+</head>
+
+
+<!-- Ready for Jungle -->   
+<body>
+
+<center class="peperino">
+    <div id="load">
+    <center class="logoLoad">
+  <svg class="logo" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1">
+    <g class="logo__mainGroup">
+        
+      <path class="logo__square" fill="none" stroke-width="1" d="M0,0 0,50 50,50 50,0z"/>
+
+      <g class="logo__colorGroup">
+        <path class="logo__stroke" fill="none" stroke-width="1" d="M0,00 0,50 50,50 50,0 20,0 20,30 30,30 30,10 40,10 40,40 10,40 10,0 -0.5,0" />
+        <path class="logo__fill" fill="none" stroke-width="11" d="M5,-0.5 5,45 45,45 45,5 25,5 25,30.5 " />
+      </g>
+    </g>
+  </svg>
+<center>
+
+    <div><a id="toolongawait" href="../index.html">Si tiene problemas para acceder a nuestra página, commpruebe la lista de navegadores compatibles haciendo click en este mensaje,<br> de lo contrario será redirigido automaticamente despues de unos segundos.</a>
+    </div>
+    </div>
+</center>
+
+
+<!-- Dependencies Manager -->
+<center id="scriptWindow" class="modalRunner">
+  <div class="modalRunnerContent">
+    <h3 class="modalRunnerTitle"><i class="bi bi-emoji-laughing"></i> Script & Link manager</h3>
+
+
+    <input placeholder="Ingresá acá tu Script" id="scriptInput1" type="text">
+    <button id="deleteScriptInput1" type="button" class="ModalBtn">-</button>
+    <button id="tryScriptBtn1" type="button" class="ModalBtn">Try</button><p id="outputScript1"></p>
+
+    <input id="scriptInput2" type="text">
+    <button id="deleteScriptInput2" type="button" class="ModalBtn">-</button>
+    <button id="tryScriptBtn2" type="button" class="ModalBtn">Try</button><p id="outputScript2"></p>
+
+    <input id="scriptInput3" type="text">
+    <button id="deleteScriptInput3" type="button" class="ModalBtn">-</button>
+    <button id="tryScriptBtn3" type="button" class="ModalBtn">Try</button><p id="outputScript3"></p>
+
+    <input id="scriptInput4" type="text">
+    <button id="deleteScriptInput4" type="button" class="ModalBtn">-</button>
+    <button id="tryScriptBtn4" type="button" class="ModalBtn">Try</button><p id="outputScript4"></p>
+
+    <input id="scriptInput5" type="text">
+    <button id="deleteScriptInput5" type="button" class="ModalBtn">-</button>
+    <button id="tryScriptBtn5" type="button" class="ModalBtn">Try</button><p id="outputScript5"></p>
+
+    <button id="closeScriptBtn" type="button" class="ModalBtn">Cancelar</button>
+    <button id="aceptarScriptBtn" type="button" class="ModalBtn">Aceptar</button>
+  </div>
+</center>
+<!-- End dependencies Manager -->
+
+<!-- Notificación de Bienvenida -->
+<center id="welcomeWindow" class="modalWelcomeRunner">
+    <div class="modalRunnerContent">
+        <h2 class="modalRunnerTitle"><i class="bi bi-emoji-smile-upside-down"></i> Bienvenido!</h2>
+        <h3>Gracias por confiar en nuestras soluciones.</h3>
+
+        <p>Codart de Unirvana es un editor de código Online Open Source, si tenés alguna idea, comentario
+        ó implementación, unite a nuestra comunidad.</p>
+
+        <p>Ten en cuenta que esta en una versión BETA, 
+        por lo cual agradecemos cualquier comentario o aporte, nos será de gran ayuda para entender 
+        cómo lo estás disfrutando, y mejorar la experiencia aún más.</p>
+
+        <p>Por supuesto, si necesitas ayuda, no dudes en consultar nuestra sección de preguntas frecuentes, 
+        así como tambien nuestra documentación.<p>
+        <p><b>Álan Dufour, creador de Unirvana.live</b></p>
+        <button type="button" class="ModalBtn"><a class="bi bi-github" href="https://github.com/dfralan/unirvana.live"></a></button>
+        <button type="button" class="ModalBtn"><a class="bi bi-instagram" href="https://www.instagram.com/unirvana.live/"></a></button>
+        <button id="aceptarWelcomeBtn" type="button" class="ModalBtn">Aceptar</button>
+    </div>
+  </div>
+</center>
+
+<!-- Notificación de exportación -->
+<center id="exportWindow" class="modalRunner">
+    <div class="modalRunnerContent">
+        <h3 class="modalRunnerTitle"><i class="bi bi-emoji-smile-upside-down"></i></i> Descarga</h3>
+        <p>Su archivo está listo para ser procesado. Confirme la acción para comprimir y descargar el mismo, de lo contrario presione Cancelar.</p>
+        <button id="cancelExport" type="button" class="ModalBtn"><i class="bi bi-x-square-fill"></i> Cancelar</button>
+        <button id="downloadBtn" type="button" class="ModalBtn"><i class="bi bi-cloud-arrow-down-fill"></i> Confirmar y Descargar</button>
+    </div>
+  </div>
+</center>
+
+<!-- Confirmación de Descarga -->
+<center id="successOnDownload" class="modalFadeRunner">
+    <div class="modalRunnerContent">
+        <h3 class="modalRunnerTitle"><i class="bi bi-emoji-laughing"></i> Éxito!</h3>
+        <p>Su archivo se está descargado correctamente.</p>
+    </div>
+  </div>
+</center>
+
+<!-- Notificación de Limpieza de Mesa de Mesa de Trabajo -->
+<center id="clearWindow" class="modalRunner">
+    <div class="modalRunnerContent">
+        <h3 class="modalRunnerTitle"><i class="bi bi-exclamation-diamond"></i> Atención</h3>
+        <p>Está a punto de limpiar su mesa de trabajo. Si pulso el botón por error, puede desestimar esta acción presionando Cancelar.</p>
+        <button id="cancelClear" type="button" class="ModalBtn"><i class="bi bi-x-square-fill"></i> Cancelar</button>
+        <button id="clearNow" type="button" class="ModalBtn"><i class="bi bi-backspace-fill"></i> Limpiar</button>
+    </div>
+  </div>
+</center>
+
+<!-- Confirmación de Limpieza de mesa de trabajo -->
+<center id="successOnClean" class="modalFadeRunner">
+    <div class="modalRunnerContent">
+        <h3 class="modalRunnerTitle"><i class="bi bi-emoji-sunglasses"></i></i> Suave!</h3>
+        <p>Su mesa se limpió satisfactoriamente!</p>
+    </div>
+  </div>
+</center>
+
+<!-- Barra de Herramientas -->
+<nav id="nav">
+    <!-- Logo -->
+    <button id="logo">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21.3px"height="20.1px" viewBox="0 0 21.3 20.1" style="overflow:visible;enable-background:new 0 0 21.3 20.1;" xml:space="preserve"><style type="text/css"></style><defs></defs><g id="Layer_2_2_"><g><path class="st0" d="M6.1,0c0.1,4.8,0.3,9.5,0.4,14.3c2.8,0,5.5,0,8.4,0c0.1-3,0.1-5.8,0.3-8.7c-1,0-1.9,0-3,0c0,1.9,0,3.9-0.1,5.8c-1,0-1.8,0-2.8,0c0-3-0.1-5.8-0.1-8.7c3,0,6,0,9,0c-0.3,4.8-0.4,9.5-0.6,14.3c-4.6,0-9.1,0-13.7,0C3.6,11.5,3.3,5.7,3.1,0C2.1,0,1,0,0,0c0.4,6.7,0.7,13.4,1.2,20.1c5.4,0,10.7,0,16.3,0c0.9,0,1.8,0,2.7,0c0.4-6.7,0.7-13.4,1.2-20.1C16.3,0,11.3,0,6.1,0z"></g></g></svg>
+    </button>
+    
+    <!-- Deshacer y Rehacer -->
+    <button class="button" type="button" id="undoBtn" ><i class="bi bi-arrow-90deg-left"></i></button>
+    <button class="button" type="button" id="redoBtn"><i class="bi bi-arrow-90deg-right"></i></button>
+
+    <!-- Atajos a editores -->
+    <button class="button" id="htmlBtn"  type="button" ondblclick="htmlMin()" ><i class="bi bi-code-square"></i></button>
+    <button class="button" id="cssBtn"  type="button" ondblclick="cssMin()"><i class="bi bi-palette"></i></button>
+    <button class="button" id="jsBtn" type="button"  ondblclick="jsMin()"><span>JS</span></button>
+
+    <!-- Ocultar Editores -->
+    <button type="button" id="Show" class="button"><i class="bi bi-eye-fill"></i> Show</button>
+    <button type="button" id="Hide" class="button"><i class="bi bi-eye-slash-fill"></i> Hide</button>
+
+    <!-- Paleta de Colores -->
+    <input class="color" value="#000000">
+
+    <!-- Selector de Temas -->
+    <select class="button"  id="themes" aria-label="Theme Selector">
+    <option selected>monokai</option><option>ambiance</option><option>github</option><option>chaos</option><option>chrome</option><option>clouds</option><option>clouds_midnight</option><option>cobalt</option><option>crimson_editor</option><option>dawn</option><option>dracula</option><option>dreamweaver</option><option>eclipse</option><option>gob</option><option>gruvbox</option><option>idle_fingers</option><option>iplastic</option><option>katzenmilch</option><option>kr_theme</option><option>kuroir</option><option>merbivore</option><option>merbivore_soft</option><option>mono_industrial</option><option>monokai</option><option>nord_dark</option><option>one_dark</option><option>pastel_on_dark</option><option>solarized_dark</option><option>solarized_light</option><option>sqlserver</option><option>terminal</option><option>textmate</option><option>tomorrow</option><option>tomorrow_night</option><option>tomorrow_night_blue</option><option>tomorrow_night_bright</option><option>tomorrow_night_eighties</option><option>twilight</option><option>vibrant_ink</option><option>xcode</option>
+    </select>
+
+    <!-- Limpiar y Ejecutar -->
+    <button class="button" type="button" id="clearBtn" ><i class="bi bi-backspace-fill"></i> Clear all</button>
+    
+    <!-- Run Btn -->
+    <button class="button" type="button" id="runBtn"><i class="bi bi-caret-right-square-fill"></i> Run</button>
+
+    <!-- Console Switcher -->
+    <input class="button" type="checkbox" value="<>" id="consoleSwitchBtn" autocomplete="off">
+
+    <!-- AutoRun Bool -->
+    <input class="button" type="checkbox" value="AutoRun" id="autoRunBtn" checked autocomplete="off">    
+
+    <!-- Script Manager -->
+    <button class="button" id="scriptBtn" type="button"><i class="bi bi-eye"></i> Dependencies</button>
+
+    <!-- Sección de Descarga -->
+    <button class="button" type="button" id="exportBtn"><i class="bi bi-cloud-arrow-down-fill"></i> Export</button>
+</nav>
+
+<!-- Stack -->
+<div id="gridCanvas" class="grid-stack"></div>
+<script type="text/javascript" src="assets\main\uiJs\grid.js" ></script>
+
+<!-- User Output -->
+<iframe id='iframeUser' frameBorder="0">
+</iframe>
+
+<!-- UX Tools -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script type="text/javascript" src="assets\main\uiJs\dragger.js"></script>
+
+<!-- Compress & Export -->
+<script type="text/javascript" src="assets\fileGen\FileSaver.js"></script>
+<script type="text/javascript" src="assets\fileGen\downloader.js"></script>
+<script type="text/javascript" src="assets\fileGen\jszip.min.js"></script>
+
+<!-- Editor Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-javascript.min.js" integrity="sha512-ZxMbXDxB0Whct+zt+DeW/RZaBv33N5D7myNFtBGiqpDSFRLxn2CNp6An0A1zUAJU/+bl8CMVrwxwnFcpFi3yTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.min.js" integrity="sha512-8qx1DL/2Wsrrij2TWX5UzvEaYOFVndR7BogdpOyF4ocMfnfkw28qt8ULkXD9Tef0bLvh3TpnSAljDC7uyniEuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- UI Tools -->
+<script type="text/javascript" src="assets/colorPicker/colors.js"></script>
+<script type="text/javascript" src="assets/colorPicker/colorPicker.data.js"></script>
+<script type="text/javascript" src="assets/colorPicker/colorPicker.js"></script>
+
+<!-- Do not replace by CDN cause has personalized functions -->
+<script type="text/javascript" src="assets/colorPicker/jqColor.js"></script>
+
+<!-- Deployed Palette -->
+<script type="text/javascript" src="assets\colorPicker\memory.js"></script>
+  
+<!-- Application -->
+<script type="text/javascript" src="assets\main\app\app.js"></script>
+
+</body>
+</html>

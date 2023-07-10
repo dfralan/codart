@@ -1,0 +1,433 @@
+/*------------------------------------------------------------------
+ * Website Name: Codart.unirvana.live
+ * App URI: http://www.brandio.io/envato/hustbee
+ * Author: Alan
+ * Author URI: https://github.com/dfralan
+ * Description: Codart is an Open Source Online Code Editor
+ * Version: 0
+ * Copyright 2021 unirvana.live
+ -------------------------------------------------------------------*/
+
+/* width */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+html,body {
+    font-size: small;
+    margin: 0;
+    background-color: white;
+    padding: 0;
+    min-height:100%;
+    width:100%;
+}
+
+
+#toolongawait {
+    visibility: hidden;
+    position: fixed;
+    font-size: large;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    background-color: transparent;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: black;
+    text-align: center;
+    z-index: 10000;
+}
+
+#load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    background-color: #fbfbfb;
+}
+  
+#load img{
+    padding-top: 20%;
+    z-index:10000;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: black;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(49, 49, 49); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2);
+  opacity: 20%;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(33, 33, 33);
+}
+
+#nav {
+    
+  transition: .3s;
+    z-index: 1000;
+    width: 100%;
+    background-color: #535353 !important;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+h1{
+    font-size: larger !important;
+}
+
+h2{
+    font-size: large !important;
+}
+
+h3{
+    font-size: medium !important;
+}
+
+h4{
+    font-size: small !important;
+}
+h5{
+    font-size: smaller !important;
+}
+
+.modalWelcomeRunner{
+    position: absolute;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.modalFadeRunner{
+    position: absolute;
+    z-index: 10000;
+    background-color: transparent;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.modalRunner{
+    position: absolute;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.modalRunnerContent{
+    padding: 10px;
+    color: #333;
+    margin-top: 10%;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 3px !important;
+    background-color: white;
+    max-width: 500px;
+    height: auto;
+}
+
+.modalRunnerTitle
+{
+    padding: 5px;
+    border-bottom: 1px solid #444;
+}
+
+.modalRunner p{
+    padding: 5px;
+}
+
+.ModalBtn{
+    background-color: rgb(255, 255, 255);
+    border: solid 1px #333;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 3px !important;
+}
+
+#logo{
+    outline: none !important;
+    color: #c2c2c2;
+    background-color: rgb(48, 48, 48, 0);
+    border: none;
+    height: 36px !important;
+    min-width: 36px !important;
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 2px 2px 2px 2px;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px !important;
+    transition: .3s;
+}
+
+#logo:hover{
+    background-color: rgb(48, 48, 48, 1);
+    border: none;
+}
+
+.button{
+	outline: none !important;
+    color: #c2c2c2;
+    background-color: rgb(48, 48, 48, 0);
+    border: none;
+    height: 36px !important;
+    min-width: 36px !important;
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 2px 2px 2px 2px;
+    padding: 0px 5px 0px 5px;
+    border-radius: 5px !important;
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: rgb(48, 48, 48, 1);
+    border: none;
+}
+
+.color {
+    border-radius: 5px !important;
+    transition: .3s;
+    border: none;
+    margin: 2px 2px 2px 2px !important;
+}
+
+#Show {
+    display:none;
+    width: 66px;
+}
+
+#Hide {
+    width: 66px;
+}
+
+#clearBtn{
+    border: none;
+}
+
+#clearBtn:hover{
+    background-color: #303030;
+    color: #c2c2c2;
+}
+
+#logo{
+    opacity: 1 !important;
+    width: 36px !important;
+    height: 36px !important;
+}
+
+/* off auto run */
+#autoRunBtn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 36px !important;
+    width: 85px;
+    color: #c2c2c2;
+    background-position: center;
+    outline: none;
+    background-repeat: no-repeat;
+    transition: .3s;
+    cursor: pointer;
+    opacity: .5;
+    border: solid 1px rgb(191, 191, 191, 1);
+}
+
+#autoRunBtn:before {
+    border: solid 1px rgb(191, 191, 191, 0);
+    display: block;
+    content: 'Auto Off';
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 10%;
+    opacity:1;
+}
+
+/* on auto run */
+#autoRunBtn:checked {
+    
+    background-color: #c2c2c2;
+    color: #303030;
+    
+    border: none;
+    opacity: 1;
+}
+
+#autoRunBtn:checked:before {
+    
+    display: block;
+    content: 'Auto On';
+    background-repeat: no-repeat;
+    text-align: center;
+    opacity: 1;
+}
+
+#autoRunBtn:hover {
+    opacity: 1;
+    border: none;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#iframeUser {
+    z-index: 1;
+    height:100%;
+    width:100%;
+}
+
+.editorHeader{
+    color: #c2c2c2;
+    font-size: x-small;
+    position: absolute;
+    height: 15px;
+    width: 100%;
+    background-color: #535353;
+    scrollbar-width: none;
+}
+
+.editor{
+    top: 15px;
+    border-radius: 0;
+    height:100%;
+    width:100%; 
+    transition: .3s;
+}
+
+#themes{
+    border: solid 1px rgb(194, 194, 194, 1);
+}
+
+#themes:hover{
+    border: solid 1px rgb(194, 194, 194, 0);
+}
+
+/* off auto run */
+#consoleSwitchBtn {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 36px !important;
+    width: 85px;
+    color: #c2c2c2;
+    background-position: center;
+    outline: none;
+    background-repeat: no-repeat;
+    transition: .3s;
+    cursor: pointer;
+    opacity: .5;
+    border: solid 1px rgb(191, 191, 191, 1);
+}
+
+#consoleSwitchBtn:before {
+    border: solid 1px rgb(191, 191, 191, 0);
+    display: block;
+    content: 'Console Off';
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-top: 10%;
+    opacity:1;
+}
+
+/* on auto run */
+#consoleSwitchBtn:checked {
+    
+    background-color: #c2c2c2;
+    color: #303030;
+    
+    border: none;
+    opacity: 1;
+}
+
+#consoleSwitchBtn:checked:before {
+    
+    display: block;
+    content: 'Console On';
+    background-repeat: no-repeat;
+    text-align: center;
+    opacity: 1;
+}
+
+#consoleSwitchBtn:hover {
+    opacity: 1;
+    border: none;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+#exportBtn{
+    background-color: #303030;
+    color: #c2c2c2;
+    opacity: 1;
+}
+
+#exportBtn:hover{
+    background-color: #dadada;
+    color: #303030;
+    opacity: 1;
+}
+
+.logoLoad {
+    
+    border-radius: 10px;
+    background-color: #303030;
+    border: solid 1px rgb(191, 191, 191);
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    margin-left: -50px;
+    margin-top: -50px;
+    width: 110px;
+    height: 110px;
+}
+.logo {
+    
+    transform: perspective(200px) rotateX(-15deg);
+    width: 80px;
+    height: 80px;
+    overflow: visible;
+}
+.logo__stroke {
+    transform: translateY(10px);
+    stroke-dasharray: 600, 600;
+    stroke-dashoffset: 600;
+    animation: strokeAnim 5s 1s ease-out infinite;
+}
+.logo__fill {
+    transform: translateY(10px);
+    stroke-dasharray: 290, 290;
+    stroke-dashoffset: 290;
+    animation: fillAnim 5s 1s ease-out infinite;
+}
+@keyframes strokeAnim  {
+    0% {stroke-dashoffset: 600;opacity: 0;}
+    10% {stroke-dashoffset: 0;opacity: 1;}
+    80% {stroke-dashoffset: 0;opacity: 1;}
+    90% {stroke-dashoffset: 600;opacity: 0;}
+}
+@keyframes fillAnim {
+    0% {stroke-dashoffset: 290;opacity: 0;}
+    15% {stroke-dashoffset: 0;opacity: 1;}
+    75% {stroke-dashoffset: 0;opacity: 1;}
+    85% {stroke-dashoffset: 290;}
+    90% {opacity: 0;}
+}
+
